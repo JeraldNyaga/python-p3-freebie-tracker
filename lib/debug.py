@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 
 from sqlalchemy import create_engine
-<<<<<<< HEAD
-
-from models import Company, Dev
-
-if __name__ == '__main__':
-    engine = create_engine('sqlite:///freebies.db')
-    import ipdb; ipdb.set_trace()
-=======
 from sqlalchemy.orm import sessionmaker
 from models import Company, Dev, Freebie
 
@@ -42,4 +34,3 @@ mug = session.query(Freebie).filter_by(item_name="Mug").first()
 alice.give_away(bob, mug)
 session.commit()
 print(f"\nAfter giveaway, Mug is now owned by {mug.dev.name}")
->>>>>>> 5c45024 (First version of code)

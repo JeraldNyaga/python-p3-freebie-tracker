@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 # Script goes here!
-<<<<<<< HEAD
-=======
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -38,4 +36,3 @@ session.add_all([company1, company2, dev1, dev2, freebie1, freebie2, freebie3])
 session.commit()
 
 print("✅ Seed data created.")
->>>>>>> 5c45024 (First version of code)

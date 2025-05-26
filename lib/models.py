@@ -27,8 +27,6 @@ class Dev(Base):
 
     def __repr__(self):
         return f'<Dev {self.name}>'
-<<<<<<< HEAD
-=======
 
 class Freebie(Base):
     __tablename__ = 'freebies'
@@ -79,4 +77,3 @@ def give_away(self, dev, freebie):
 
 Dev.received_one = received_one
 Dev.give_away = give_away
->>>>>>> 5c45024 (First version of code)
