@@ -9,15 +9,15 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Test Dev -> Freebies
-alice = session.query(Dev).filter_by(name="Alice").first()
-print(f"{alice.name}'s freebies:")
-for freebie in alice.freebies:
+anna = session.query(Dev).filter_by(name="Anna").first()
+print(f"{anna.name}'s freebies:")
+for freebie in anna.freebies:
     print(f"  - {freebie.item_name} from {freebie.company.name}")
 
 # Test Company -> Devs
-codeworks = session.query(Company).filter_by(name="CodeWorks").first()
-print(f"\nDevs who got freebies from {codeworks.name}:")
-for dev in codeworks.devs:
+TechieNiBaddie = session.query(Company).filter_by(name="TechieNiBaddie").first()
+print(f"\nDevs who got freebies from {TechieNiBaddie.name}:")
+for dev in TechieNiBaddie.devs:
     print(f"  - {dev.name}")
 
 # Test Freebie.print_details
@@ -26,11 +26,11 @@ for freebie in session.query(Freebie).all():
     freebie.print_details()
 
 # Test Dev.received_one
-print(f"\nHas Alice received a Mug? {alice.received_one('Mug')}")
+print(f"\nHas Anna received a Mug? {anna.received_one('Mug')}")
 
 # Test Dev.give_away
-bob = session.query(Dev).filter_by(name="Bob").first()
+jamo = session.query(Dev).filter_by(name="Jamo").first()
 mug = session.query(Freebie).filter_by(item_name="Mug").first()
-alice.give_away(bob, mug)
+anna.give_away(jamo, mug)
 session.commit()
 print(f"\nAfter giveaway, Mug is now owned by {mug.dev.name}")
