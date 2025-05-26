@@ -8,13 +8,13 @@ engine = create_engine("sqlite:///app.db")
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Test Dev -> Freebies
+# Print user and their Freebies
 anna = session.query(Dev).filter_by(name="Anna").first()
 print(f"{anna.name}'s freebies:")
 for freebie in anna.freebies:
     print(f"  - {freebie.item_name} from {freebie.company.name}")
 
-# Test Company -> Devs
+# Companies and their lucky winners
 TechieNiBaddie = session.query(Company).filter_by(name="TechieNiBaddie").first()
 print(f"\nDevs who got freebies from {TechieNiBaddie.name}:")
 for dev in TechieNiBaddie.devs:

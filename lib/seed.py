@@ -12,7 +12,6 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-
 # Tech companies
 company1 = Company(name="Safaricom coders", founding_year=1920)
 company2 = Company(name="Waters Snakes", founding_year=2021)
@@ -35,7 +34,7 @@ freebie6 = Freebie(item_name="Coffee maker", value=9, company=company1, dev=dev4
 freebie6 = Freebie(item_name="Hat", value=9, company=company2, dev=dev5)
 
 # Add everything to session and commit
-session.add_all([company1, company2, dev1, dev2, freebie1, freebie2, freebie3])
+session.add_all([company1, company2, company3, dev1, dev2,dev3, dev4, dev5, freebie1, freebie2, freebie3,freebie4, freebie5, freebie6])
 session.commit()
 
 print("✅ Seed data created.")
